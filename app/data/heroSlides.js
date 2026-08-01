@@ -1,8 +1,8 @@
-import herophoneImg from "../assets/images/herophone.png";
-import soccerImg from "../assets/images/soccer.jpg";
-import mercedesImg from "../assets/images/mercedes.png";
-import monitorImg from "../assets/images/monitor.jpg";
-import satinJacketImg from "../assets/images/satinjacket.jpg";
+import herophoneImg from "@/assets/images/herophone.png";
+import soccerImg from "@/assets/images/soccer.jpg";
+import mercedesImg from "@/assets/images/mercedes.png";
+import monitorImg from "@/assets/images/monitor.jpg";
+import satinJacketImg from "@/assets/images/satinjacket.jpg";
 
 export const heroSlides = [
   {

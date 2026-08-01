@@ -1,19 +1,19 @@
-import guccibag1 from "../assets/images/guccibag.webp";
-import bookshelfImg from "../assets/images/bookshelf.webp";
-import northCoatImg from "../assets/images/coat.png";
-import satinJacketImg from "../assets/images/satinjacket.jpg";
-import gamepadImg from "../assets/images/gamepad.jpg";
-import soccerCleatsImg from "../assets/images/soccer.jpg";
-import kidsCarImg from "../assets/images/mercedes.png";
-import blackGamepadImg from "../assets/images/black-gamepad.jpg";
-import keyboardImg from "../assets/images/keyboard.png";
-import monitorImg from "../assets/images/monitor.jpg";
-import chairImg from "../assets/images/chair.jpg";
-import cpuCoolerImg from "../assets/images/CPUcooler.png";
-import dogFoodImg from "../assets/images/dogfeed.jpg";
-import cameraImg from "../assets/images/camera.png";
-import gamingLaptopImg from "../assets/images/gaminglaptop.jpg";
-import curologyImg from "../assets/images/curology.png"
+import guccibag1 from "@/assets/images/guccibag.webp";
+import bookshelfImg from "@/assets/images/bookshelf.webp";
+import northCoatImg from "@/assets/images/coat.png";
+import satinJacketImg from "@/assets/images/satinjacket.jpg";
+import gamepadImg from "@/assets/images/gamepad.jpg";
+import soccerCleatsImg from "@/assets/images/soccer.jpg";
+import kidsCarImg from "@/assets/images/mercedes.png";
+import blackGamepadImg from "@/assets/images/black-gamepad.jpg";
+import keyboardImg from "@/assets/images/keyboard.png";
+import monitorImg from "@/assets/images/monitor.jpg";
+import chairImg from "@/assets/images/chair.jpg";
+import cpuCoolerImg from "@/assets/images/CPUcooler.png";
+import dogFoodImg from "@/assets/images/dogfeed.jpg";
+import cameraImg from "@/assets/images/camera.png";
+import gamingLaptopImg from "@/assets/images/gaminglaptop.jpg";
+import curologyImg from "@/assets/images/curology.png";
 
 export const products = [
   {
@@ -125,7 +125,6 @@ export const products = [
     rating: 5,
     reviewCount: 65,
     description: "Compact wooden bookshelf, ideal for small spaces.",
-    // colors: ["#B3B3B3"],
     sizes: ["Standard"],
     category: "bestSelling",
   },
@@ -168,7 +167,7 @@ export const products = [
   {
     id: "curology-set",
     image: curologyImg,
-    images: [" Curology "],
+    images: [curologyImg],
     title: "Curology Product Set",
     price: 500,
     rating: 4,
