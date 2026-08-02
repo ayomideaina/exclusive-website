@@ -4,7 +4,6 @@ import SectionHeader from "../../components/layout/SectionHeader";
 import playstationImg from "@/assets/images/playstation.png";
 import hatImg from "@/assets/images/hat.jpg";
 import MPspeakersImg from "@/assets/images/MPspeakers.png";
-
 import perfumeImg from "@/assets/images/perfume.png";
 
 export default function NewArrivalSection() {
@@ -13,7 +12,7 @@ export default function NewArrivalSection() {
       <SectionHeader eyebrow="Featured" title="New Arrival" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Link
-          href="/products/playstation-5"
+          href="/shop"
           className="relative rounded overflow-hidden bg-black flex items-end p-8 min-h-80"
         >
           <Image
@@ -33,7 +32,7 @@ export default function NewArrivalSection() {
 
         <div className="grid grid-rows-[2fr_1fr] gap-4">
           <Link
-            href="/category/womens"
+            href="/shop"
             className="relative rounded overflow-hidden bg-black flex items-end p-8 min-h-45"
           >
             <Image
@@ -53,7 +52,7 @@ export default function NewArrivalSection() {
 
           <div className="grid grid-cols-2 gap-4">
             <Link
-              href="/product/speakers"
+              href="/shop"
               className="relative rounded overflow-hidden bg-black flex items-end p-6 min-h-35"
             >
               <Image
@@ -69,7 +68,7 @@ export default function NewArrivalSection() {
             </Link>
 
             <Link
-              href="/product/perfume"
+              href="/shop"
               className="relative rounded overflow-hidden bg-black flex items-end p-6 min-h-35"
             >
               <Image

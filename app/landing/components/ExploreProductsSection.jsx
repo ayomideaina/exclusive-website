@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import SectionHeader from "../../components/layout/SectionHeader";
 import SectionNavArrows from "../../components/SelectionNavArrows";
@@ -55,7 +55,9 @@ export default function ExploreProductsSection() {
       </div>
 
       <div className="flex justify-center mt-10">
-        <AppButton variant="primary">View All Products</AppButton>
+        <Link href="/shop">
+          <AppButton variant="primary">View All Products</AppButton>
+        </Link>
       </div>
     </section>
   );

@@ -1,18 +1,12 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import SectionHeader from "../../components/layout/SectionHeader";
-import SectionNavArrows from "../../components/SelectionNavArrows";
-import CountdownTimer from "../../components/CounterTimer";
-import AppCard from "../../components/AppCard";
-import AppButton from "../../components/AppButton";
-import { flashSaleProducts } from "@/data/mockData";
+import AppCard from "../components/AppCard";
+import { products } from "@/data/mockData";
 import { addToCart } from "@/store/cartSlice";
 import { addToWishlist } from "@/store/wishlistSlice";
 
-export default function FlashSalesSection() {
-  const [saleEndDate] = useState(() => new Date(Date.now() + 3 * 24 * 60 * 60 * 1000));
+export default function Shop() {
   const dispatch = useDispatch();
   const wishlistItems = useSelector((state) => state.wishlist.items);
 
@@ -23,7 +17,7 @@ export default function FlashSalesSection() {
         title: product.title,
         image: product.image,
         price: product.price,
-      })
+      }),
     );
   };
 
@@ -36,24 +30,26 @@ export default function FlashSalesSection() {
         price: product.price,
         oldPrice: product.oldPrice,
         discount: product.discount,
-      })
+      }),
     );
   };
 
   return (
-    <section className="container-app section">
-      <SectionHeader
-        eyebrow="Today's"
-        title="Flash Sales"
-        titleAddon={<CountdownTimer targetDate={saleEndDate} />}
-        action={<SectionNavArrows />}
-      />
+    <div className="container-app section">
+      <div className="flex items-center gap-2 text-sm text-text-muted mb-10">
+        <Link href="/" className="hover:text-primary">
+          Home
+        </Link>
+        <span>/</span>
+        <span className="text-text-primary">Shop</span>
+      </div>
+      <h1 className="text-3xl font-semibold mb-10">All Products</h1>
 
       <div className="product-grid">
-        {flashSaleProducts.map((product) => (
+        {products.map((product) => (
           <AppCard
             key={product.id}
-            variant="flashSale"
+            variant="explore"
             {...product}
             isWishlisted={wishlistItems.some((item) => item.id === product.id)}
             onAddToCart={() => handleAddToCart(product)}
@@ -61,12 +57,6 @@ export default function FlashSalesSection() {
           />
         ))}
       </div>
-
-      <div className="flex justify-center mt-12">
-        <Link href="/shop">
-          <AppButton variant="primary">View All Products</AppButton>
-        </Link>
-      </div>
-    </section>
+    </div>
   );
 }

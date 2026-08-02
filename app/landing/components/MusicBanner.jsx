@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import Button from "../../components/AppButton";
@@ -16,9 +16,11 @@ export default function MusicBanner() {
           <span className="text-secondary text-sm font-medium">Categories</span>
           <h2 className="text-3xl md:text-4xl font-semibold">Enhance Your Music Experience</h2>
           <CountdownTimer targetDate={endDate} variant="circle" />
-          <Button variant="secondary" className="w-fit">
-            Buy Now!
-          </Button>
+          <Link href="/shop">
+            <Button variant="secondary" className="w-fit">
+              Buy Now!
+            </Button>
+          </Link>
         </div>
         <Image
           src={speaker}
