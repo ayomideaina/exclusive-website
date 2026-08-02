@@ -36,9 +36,6 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.3.3
-      '@types/react':
-        specifier: 19.2.18
-        version: 19.2.18
       eslint:
         specifier: ^9
         version: 9.39.5(jiti@2.7.0)
@@ -3280,6 +3277,7 @@ snapshots:
   '@types/react@19.2.18':
     dependencies:
       csstype: 3.2.3
+    optional: true
 
   '@types/use-sync-external-store@0.0.6': {}
 
@@ -3623,7 +3621,8 @@ snapshots:
       shebang-command: 2.0.0
       which: 2.0.2
 
-  csstype@3.2.3: {}
+  csstype@3.2.3:
+    optional: true
 
   damerau-levenshtein@1.0.8: {}
 

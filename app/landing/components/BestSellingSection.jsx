@@ -1,10 +1,9 @@
 import SectionHeader from "../../components/layout/SectionHeader";
 import AppCard from "../../components/AppCard";
 import AppButton from "../../components/AppButton";
-import { bestSellingProducts } from "@/data/mockData";
 import Link from "next/link";
 
-export default function BestSellingSection() {
+export default function BestSellingSection({ products }) {
   return (
     <section className="container-app section">
       <SectionHeader
@@ -17,7 +16,7 @@ export default function BestSellingSection() {
         }
       />
       <div className="product-grid">
-        {bestSellingProducts.map((product) => (
+        {products.map((product) => (
           <AppCard key={product.id} variant="bestSelling" {...product} />
         ))}
       </div>

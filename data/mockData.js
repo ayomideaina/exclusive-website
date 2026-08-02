@@ -1,3 +1,4 @@
+import { unstable_cache } from "next/cache";
 import guccibag1 from "@/assets/images/guccibag.webp";
 import bookshelfImg from "@/assets/images/bookshelf.webp";
 import northCoatImg from "@/assets/images/coat.png";
@@ -232,8 +233,22 @@ export const flashSaleProducts = products.filter((p) => p.category === "flashSal
 export const bestSellingProducts = products.filter((p) => p.category === "bestSelling");
 export const exploreProducts = products.filter((p) => p.category === "explore");
 
-export function getProductById(id) {
-  return products.find((p) => p.id === id);
+const getCachedProducts = unstable_cache(async () => products, ["products"], {
+  revalidate: 60,
+});
+
+const getCachedProductById = unstable_cache(async (id) => {
+  return products.find((p) => p.id === id) ?? null;
+}, ["product-by-id"], {
+  revalidate: 60,
+});
+
+export async function getProducts() {
+  return getCachedProducts();
+}
+
+export async function getProductById(id) {
+  return getCachedProductById(id);
 }
 
 export const categories = [

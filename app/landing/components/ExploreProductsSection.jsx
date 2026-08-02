@@ -5,11 +5,10 @@ import SectionHeader from "../../components/layout/SectionHeader";
 import SectionNavArrows from "../../components/SelectionNavArrows";
 import AppCard from "../../components/AppCard";
 import AppButton from "../../components/AppButton";
-import { exploreProducts } from "@/data/mockData";
 import { addToCart } from "@/store/cartSlice";
 import { addToWishlist } from "@/store/wishlistSlice";
 
-export default function ExploreProductsSection() {
+export default function ExploreProductsSection({ products }) {
   const dispatch = useDispatch();
   const wishlistItems = useSelector((state) => state.wishlist.items);
 
@@ -42,7 +41,7 @@ export default function ExploreProductsSection() {
       <SectionHeader eyebrow="Our Products" title="Explore Our Products" action={<SectionNavArrows />} />
 
       <div className="product-grid">
-        {exploreProducts.map((product) => (
+        {products.map((product) => (
           <AppCard
             key={product.id}
             variant="explore"

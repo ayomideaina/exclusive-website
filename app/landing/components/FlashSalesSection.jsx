@@ -7,11 +7,10 @@ import SectionNavArrows from "../../components/SelectionNavArrows";
 import CountdownTimer from "../../components/CounterTimer";
 import AppCard from "../../components/AppCard";
 import AppButton from "../../components/AppButton";
-import { flashSaleProducts } from "@/data/mockData";
 import { addToCart } from "@/store/cartSlice";
 import { addToWishlist } from "@/store/wishlistSlice";
 
-export default function FlashSalesSection() {
+export default function FlashSalesSection({ products }) {
   const [saleEndDate] = useState(() => new Date(Date.now() + 3 * 24 * 60 * 60 * 1000));
   const dispatch = useDispatch();
   const wishlistItems = useSelector((state) => state.wishlist.items);
@@ -50,7 +49,7 @@ export default function FlashSalesSection() {
       />
 
       <div className="product-grid">
-        {flashSaleProducts.map((product) => (
+        {products.map((product) => (
           <AppCard
             key={product.id}
             variant="flashSale"

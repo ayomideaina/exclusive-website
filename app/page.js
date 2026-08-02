@@ -6,16 +6,25 @@ import MusicBanner from "./landing/components/MusicBanner";
 import ExploreProductsSection from "./landing/components/ExploreProductsSection";
 import NewArrivalSection from "./landing/components/NewArrivalSection";
 import FeatureSection from "./landing/components/FeatureSection";
+import { getProducts, categories } from "@/data/mockData";
 
-export default function Home() {
+export const revalidate = 60;
+
+export default async function Home() {
+  const products = await getProducts();
+
+  const flashSaleProducts = products.filter((p) => p.category === "flashSale");
+  const bestSellingProducts = products.filter((p) => p.category === "bestSelling");
+  const exploreProducts = products.filter((p) => p.category === "explore");
+
   return (
     <>
       <HeroSection />
-      <FlashSalesSection />
-      <CategoriesSection />
-      <BestSellingSection />
+      <FlashSalesSection products={flashSaleProducts} />
+      <CategoriesSection categories={categories} />
+      <BestSellingSection products={bestSellingProducts} />
       <MusicBanner />
-      <ExploreProductsSection />
+      <ExploreProductsSection products={exploreProducts} />
       <NewArrivalSection />
       <FeatureSection />
     </>
