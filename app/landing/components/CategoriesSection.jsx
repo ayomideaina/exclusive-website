@@ -5,7 +5,7 @@ import { Smartphone, Monitor, Watch, Camera, Headphones, Gamepad2 } from "lucide
 import SectionHeader from "../../components/layout/SectionHeader";
 import SectionNavArrows from "../../components/SelectionNavArrows";
 import AppCard from "../../components/AppCard";
-import { categories } from "../../data/mockData";
+import { categories } from "@/data/mockData";
 
 const iconMap = { Smartphone, Monitor, Watch, Camera, Headphones, Gamepad2 };
 

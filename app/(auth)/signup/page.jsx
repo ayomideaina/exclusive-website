@@ -6,30 +6,38 @@ import AuthLayout from "../AuthLayout";
 import AppButton from "../../components/AppButton";
 import useForm from "@/hooks/useForm";
 import useAuth from "@/hooks/useAuth";
-import { validateEmailOrPhone, validatePassword } from "@/utils/validators";
+import { validateName, validateEmailOrPhone, validatePassword } from "@/utils/validators";
 
-export default function Login() {
+export default function SignUp() {
   const router = useRouter();
-  const { logIn } = useAuth();
+  const { signUp } = useAuth();
 
   const { values, errors, isSubmitting, submitError, handleChange, handleSubmit } = useForm({
-    initialValues: { emailOrPhone: "", password: "" },
+    initialValues: { name: "", emailOrPhone: "", password: "" },
     validate: (values) => ({
+      name: validateName(values.name),
       emailOrPhone: validateEmailOrPhone(values.emailOrPhone),
       password: validatePassword(values.password),
     }),
     onSubmit: async (values) => {
-      await logIn(values.emailOrPhone, values.password);
-      router.push("/");
+      await signUp(values.emailOrPhone, values.password);
+      router.push("/login");
     },
   });
 
   return (
     <AuthLayout>
-      <h1 className="text-3xl font-semibold mb-2">Log in to Exclusive</h1>
+      <h1 className="text-3xl font-semibold mb-2">Create an account</h1>
       <p className="text-text-secondary mb-8">Enter your details below</p>
 
       <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-6">
+        <Field
+          name="name"
+          placeholder="Name"
+          value={values.name}
+          onChange={handleChange}
+          error={errors.name}
+        />
         <Field
           name="emailOrPhone"
           placeholder="Email or Phone Number"
@@ -53,13 +61,13 @@ export default function Login() {
         )}
 
         <AppButton type="submit" variant="primary" fullWidth disabled={isSubmitting}>
-          {isSubmitting ? "Logging in..." : "Log In"}
+          {isSubmitting ? "Creating account..." : "Create Account"}
         </AppButton>
 
         <p className="text-center text-sm">
-          Don&apos;t have an account?{" "}
-          <Link href="/signup" className="underline">
-            Sign up
+          Already have account?{" "}
+          <Link href="/login" className="underline">
+            Log in
           </Link>
         </p>
       </form>

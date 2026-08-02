@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaApple } from "react-icons/fa";
-import { heroSlides } from "../../data/heroSlides";
+import { heroSlides } from "../../../data/heroSlides";
 
 const AUTOPLAY_MS = 5000;
 

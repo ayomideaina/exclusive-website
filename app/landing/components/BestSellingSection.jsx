@@ -1,7 +1,7 @@
 import SectionHeader from "../../components/layout/SectionHeader";
 import AppCard from "../../components/AppCard";
 import AppButton from "../../components/AppButton";
-import { bestSellingProducts } from "../../data/mockData";
+import { bestSellingProducts } from "../../../data/mockData";
 
 export default function BestSellingSection() {
   return (

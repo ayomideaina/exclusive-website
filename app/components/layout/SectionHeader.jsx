@@ -1,4 +1,4 @@
-export default function SectionHeader({ eyebrow, title, action }) {
+export default function SectionHeader({ eyebrow, title, titleAddon, action }) {
   return (
     <div className="flex flex-col gap-4 mb-10">
       {eyebrow && (
@@ -7,13 +7,16 @@ export default function SectionHeader({ eyebrow, title, action }) {
           <span className="text-primary font-semibold">{eyebrow}</span>
         </div>
       )}
-      {(title || action) && (
+      {(title || titleAddon || action) && (
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          {title && (
-            <h2 className="text-2xl sm:text-3xl font-semibold text-text-primary">
-              {title}
-            </h2>
-          )}
+          <div className="flex items-end gap-6 flex-wrap">
+            {title && (
+              <h2 className="text-2xl sm:text-3xl font-semibold text-text-primary">
+                {title}
+              </h2>
+            )}
+            {titleAddon}
+          </div>
           {action && <div className="shrink-0">{action}</div>}
         </div>
       )}
