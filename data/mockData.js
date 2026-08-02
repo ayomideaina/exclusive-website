@@ -9,7 +9,7 @@ import blackGamepadImg from "@/assets/images/black-gamepad.jpg";
 import keyboardImg from "@/assets/images/keyboard.png";
 import monitorImg from "@/assets/images/monitor.jpg";
 import chairImg from "@/assets/images/chair.jpg";
-import cpuCoolerImg from "@/assets/images/CPUcooler.png";
+import cpuCoolerImg from "@/assets/images/cpuCooler.png";
 import dogFoodImg from "@/assets/images/dogfeed.jpg";
 import cameraImg from "@/assets/images/camera.png";
 import gamingLaptopImg from "@/assets/images/gaminglaptop.jpg";

@@ -48,7 +48,7 @@ export default function AppCard({
 
   const showCartBarAlways = variant === "wishlist";
   const showCartBarOnHover = variant === "flashSale";
-  const detailHref = id ? `/product/${id}` : undefined;
+  const detailHref = id ? `/products/${id}` : undefined;
 
   return (
     <div className="group relative flex flex-col gap-3 rounded p-4 min-w-0">
